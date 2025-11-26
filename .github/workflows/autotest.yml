@@ -8,31 +8,43 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout repository
+    - name: Checkout Repository
       uses: actions/checkout@v4
 
     - name: Set up Python
-      uses: actions/setup-python@v3
+      uses: actions/setup-python@v4
       with:
         python-version: "3.10"
 
+    # -------------------------
     # Test Case 1
+    # -------------------------
     - name: Run Test 1
-      run: python3 find_lowest_number.py test_data/test1_input.txt output1.txt
+      run: |
+        python3 find_lowest_number.py test_data/test1_input.txt output1.txt
 
     - name: Compare Test 1 Output
-      run: diff test_data/test1_expected.txt output1.txt
+      run: |
+        diff test_data/test1_expected.txt output1.txt
 
+    # -------------------------
     # Test Case 2
+    # -------------------------
     - name: Run Test 2
-      run: python3 find_lowest_number.py test_data/test2_input.txt output2.txt
+      run: |
+        python3 find_lowest_number.py test_data/test2_input.txt output2.txt
 
     - name: Compare Test 2 Output
-      run: diff test_data/test2_expected.txt output2.txt
+      run: |
+        diff test_data/test2_expected.txt output2.txt
 
+    # -------------------------
     # Test Case 3
+    # -------------------------
     - name: Run Test 3
-      run: python3 find_lowest_number.py test_data/test3_input.txt output3.txt
+      run: |
+        python3 find_lowest_number.py test_data/test3_input.txt output3.txt
 
     - name: Compare Test 3 Output
-      run: diff test_data/test3_expected.txt output3.txt
+      run: |
+        diff test_data/test3_expected.txt output3.txt
